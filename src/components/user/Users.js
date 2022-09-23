@@ -14,8 +14,6 @@ const Users = () => {
     }, [user.length]);
 
 
-    //Obtenemos los usuario
-
     const getUser = () => {
         axios.get(url + "user").then(res => {
             setUser(res.data.user);
@@ -23,7 +21,6 @@ const Users = () => {
         console.log(setUser);
     }
 
-    //Eliminamos un usuario por su id
 
     const deleteUser = (id) => {
         const idUser = user[id]._id;

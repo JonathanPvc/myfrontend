@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Mascota = ({ id, mascotaData, delMascota }) => {
+const DaHistory = ({ id, historyData, delHistory }) => {
 
-    const { name, raza, sex } = mascotaData;
+    const { name, breed, sex } = historyData;
 
 
     const del = () => {
-        delMascota(id);
+        delHistory(id);
 
     }
 
@@ -20,7 +20,7 @@ const Mascota = ({ id, mascotaData, delMascota }) => {
             </div>
 
             <div className="card-body">
-                <label className="card-text text-start">{raza}</label>
+                <label className="card-text text-start">{breed}</label>
             </div>
           
             <div className="card-body">
@@ -39,4 +39,4 @@ const Mascota = ({ id, mascotaData, delMascota }) => {
 
 }
 
-export default Mascota;
+export default DaHistory;

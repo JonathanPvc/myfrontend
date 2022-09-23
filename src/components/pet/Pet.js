@@ -1,33 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Global from '../../Global';
-import Mascota from '../mascota';
+import DaPet from './DaPet';
 
-const Mascotas = () => {
+const Pet = () => {
 
-    const [mascota, setMascota] = useState([]);
+    const [pet, setPet] = useState([]);
     const url = Global.url;
 
     useEffect(() => {
-        getMascota();
-        console.log(mascota);
-    }, [mascota.length]);
+        getPet();
+        console.log(pet);
+    }, [pet.length]);
 
 
-    //Obtenemos las mascotas
-
-    const getMascota = () => {
-        axios.get(url + "mascota").then(res => {
-            setMascota(res.data.mascota);
+    const getPet = () => {
+        axios.get(url + "pet").then(res => {
+            setPet(res.data.pet);
         });
     }
 
-    //Eliminamos una mascota por su id
 
-    const deleteMascota = (id) => {
-        const idMascota = mascota[id]._id;
-        axios.delete(url + "delete/" + idMascota).then(res => {
-            getMascota();
+    const deletePet = (id) => {
+        const idPet = pet[id]._id;
+        axios.delete(url + "delete/" + idPet).then(res => {
+            getPet();
         });
     }
 
@@ -39,20 +36,20 @@ const Mascotas = () => {
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2">
                     {
-                        mascota.length > 0 ? (
+                        pet.length > 0 ? (
 
-                            mascota.map((mascota, i) => {
+                            pet.map((pet, i) => {
 
                                 return (
 
 
 
 
-                                    <Mascota
+                                    <DaPet
                                         key={i}
                                         id={i}
-                                        mascotaData={mascota}
-                                        delMascota={deleteMascota}
+                                        petData={pet}
+                                        delPet={deletePet}
 
                                     />
 
@@ -74,4 +71,4 @@ const Mascotas = () => {
     );
 }
 
-export default Mascotas;
+export default Pet;

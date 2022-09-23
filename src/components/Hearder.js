@@ -18,10 +18,10 @@ const Header = () => {
                        
                        
                         <li className="nav-item active">
-                            <NavLink to="formmascota" className="nav-link" >Crear Mascotas <span className="sr-only"></span></NavLink>
+                            <NavLink to="formpet" className="nav-link" >Crear Mascotas <span className="sr-only"></span></NavLink>
                         </li>
                         <li className="nav-item active">
-                            <NavLink to="formhistorial" className="nav-link" >Historial <span className="sr-only"></span></NavLink>
+                            <NavLink to="formhistory" className="nav-link" >Historial <span className="sr-only"></span></NavLink>
                         </li>
                         <li className="nav-item active">
                             <NavLink to="user" className="nav-link" >Nuestra Base de Datos <span className="sr-only"></span></NavLink>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Hearder';
-import FormHistorial from './components/historial/FormHistorial';
-import FormMascotas from './components/mascotass/FormMascotas';
+import FormHistory from './components/history/FormHistory';
+import FormPet from './components/pet/FormPet';
 
 import New from './components/user/New';
-import User from './components/user/User';
+
+import Users from './components/user/Users';
 
 const Router = () => {
     return (
@@ -14,9 +15,9 @@ const Router = () => {
             <Header />
             <Routes>
                 <Route exact path="/" element={<New />} />
-                <Route exact path="/user" element={<User />} />
-                <Route exact path="/formmascota" element={<FormMascotas />} />
-                <Route exact path="/formhistorial" element={<FormHistorial />} />
+                <Route exact path="/user" element={<Users />} />
+                <Route exact path="/formpet" element={<FormPet />} />
+                <Route exact path="/formhistory" element={<FormHistory />} />
             
             </Routes>
         </BrowserRouter>

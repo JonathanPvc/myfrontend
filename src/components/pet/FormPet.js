@@ -3,13 +3,13 @@ import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 import Global from '../../Global';
 
-const FormMascotas = () => {
+const FormPet = () => {
 
     const url = Global.url;
 
-    const [mascota, setMascota] = useState({
+    const [pet, setPet] = useState({
         name: null,
-        raza: null,
+        breed: null,
         sex: null,
        
 
@@ -17,32 +17,30 @@ const FormMascotas = () => {
 
     const [redirect, setRedirect] = useState(false);
 
-    //Referencia de los datos del formulario:
     let nameRef = React.createRef();
-    let razaRef = React.createRef();
+    let breedRef = React.createRef();
     let sexRef = React.createRef();
 
     const changeState = () => {
 
-        setMascota({
+        setPet({
             name: nameRef.current.value,
-            lastname: razaRef.current.value,
+            breed: breedRef.current.value,
             sex: sexRef.current.value
         });
 
-        console.log(mascota);
+        console.log(pet);
 
     }
 
-    const sendData2 = (e) => {
+    const sendData = (e) => {
 
-        //Evitamos que al recibir los datos se recargue la pantalla:
         e.preventDefault();
 
         changeState();
 
-        //Petición http por POST para guardar la mascota:
-        axios.post(url + 'save', mascota).then(res => {
+      
+        axios.post(url + 'save', pet).then(res => {
             setRedirect(true);
             console.log(res.data);
         });
@@ -62,7 +60,7 @@ const FormMascotas = () => {
                 </div>
 
                 <div className="card-body">
-                    <form onSubmit={sendData2}>
+                    <form onSubmit={sendData}>
 
                         <div className="mb-3">
                             <label>Nombre</label>
@@ -73,7 +71,7 @@ const FormMascotas = () => {
                         <div className="mb-3">
                             <label>Raza</label>
                         
-                            <select className="form-control" rows="6" cols="30" ref={razaRef} onChange={changeState} required>
+                            <select className="form-control" rows="6" cols="30" ref={breedRef} onChange={changeState} required>
                             <option selected>seleccione una opción:</option>
                             <option value="RAZA: Boxer">Boxer</option>
                             <option value="RAZA: Pitbull">Pitbull</option>
@@ -113,4 +111,4 @@ const FormMascotas = () => {
     );
 }
 
-export default FormMascotas;
+export default FormPet;
