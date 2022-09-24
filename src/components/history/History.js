@@ -13,14 +13,14 @@ const History = () => {
   }, [history.length]);
 
   const getHistory = () => {
-    axios.get(url + "history").then((res) => {
+    axios.post(url + "history/history",).then((res) => {
       setHistory(res.data.history);
     });
   };
 
   const deleteHistory = (id) => {
     const idHistory = history[id]._id;
-    axios.delete(url + "delete/" + idHistory).then((res) => {
+    axios.delete(url + "history/delete/" + idHistory).then((res) => {
       getHistory();
     });
   };

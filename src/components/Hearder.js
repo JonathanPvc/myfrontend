@@ -15,17 +15,27 @@ const Header = () => {
                     <li className="nav-item active">
                             <NavLink to="/" className="nav-link" >Crear Cliente <span className="sr-only"></span></NavLink>
                         </li>
+                        <li className="nav-item active">
+                            <NavLink to="user" className="nav-link" >Nuestra Base de Datos <span className="sr-only"></span></NavLink>
+                        </li>
                        
                        
                         <li className="nav-item active">
                             <NavLink to="formpet" className="nav-link" >Crear Mascotas <span className="sr-only"></span></NavLink>
                         </li>
                         <li className="nav-item active">
-                            <NavLink to="formhistory" className="nav-link" >Historial <span className="sr-only"></span></NavLink>
+                            <NavLink to="pet" className="nav-link" >Nuestras Mascotas <span className="sr-only"></span></NavLink>
+                        </li>
+                      
+                       
+                        <li className="nav-item active">
+                            <NavLink to="formhistory" className="nav-link" >CrearHistorial <span className="sr-only"></span></NavLink>
                         </li>
                         <li className="nav-item active">
-                            <NavLink to="user" className="nav-link" >Nuestra Base de Datos <span className="sr-only"></span></NavLink>
+                            <NavLink to="history" className="nav-link" >Nuestro Historial <span className="sr-only"></span></NavLink>
                         </li>
+                        
+                       
                     </ul>
                 </div>
             </div>

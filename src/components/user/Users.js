@@ -15,7 +15,7 @@ const Users = () => {
 
 
     const getUser = () => {
-        axios.get(url + "user").then(res => {
+        axios.get(url + "user/user").then(res => {
             setUser(res.data.user);
         });
         console.log(setUser);
@@ -24,7 +24,7 @@ const Users = () => {
 
     const deleteUser = (id) => {
         const idUser = user[id]._id;
-        axios.delete(url + "delete/" + idUser).then(res => {
+        axios.delete(url + "user/delete/" + idUser).then(res => {
             getUser();
         });
     }
@@ -32,7 +32,7 @@ const Users = () => {
     return (
 
         <div className="publicaciones">
-            <h1 className="mt-5">Nuestra Base de Datos</h1>
+            <h1 className="mt-5">Nuestra Base de Clientes</h1>
             <br /><br />
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2">

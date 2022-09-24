@@ -50,12 +50,13 @@ const New = () => {
         changeState();
 
         //Petición http por POST para guardar el usuario:
-        axios.post(url + 'save', user).then(res => {
+        axios.post(url + 'user/save', user).then(res => {
             setRedirect(true);
             console.log(res.data);
         });
 
     }
+    
 
     if(redirect){
         return <Navigate to="user" />;

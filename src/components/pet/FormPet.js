@@ -40,7 +40,7 @@ const FormPet = () => {
         changeState();
 
       
-        axios.post(url + 'save', pet).then(res => {
+        axios.post(url + 'pet/save', pet).then(res => {
             setRedirect(true);
             console.log(res.data);
         });
@@ -48,7 +48,7 @@ const FormPet = () => {
     }
 
     if(redirect){
-        return <Navigate to="/user" />;
+        return <Navigate to="/pet" />;
     }
 
     return (
@@ -73,13 +73,13 @@ const FormPet = () => {
                         
                             <select className="form-control" rows="6" cols="30" ref={breedRef} onChange={changeState} required>
                             <option selected>seleccione una opción:</option>
-                            <option value="RAZA: Boxer">Boxer</option>
-                            <option value="RAZA: Pitbull">Pitbull</option>
-                            <option value="RAZA: Labrador">Labrador</option>
-                            <option value="RAZA: Criollo">Criollo</option>
-                            <option value="RAZA: Rottweiler">Rottweiler</option>
-                            <option value="RAZA: Bull Terrier">Bull Terrier</option>
-                            <option value="RAZA: Chihuahua">Chihuahua</option>
+                            <option value="Boxer">Boxer</option>
+                            <option value="Pitbull">Pitbull</option>
+                            <option value="Labrador">Labrador</option>
+                            <option value="Criollo">Criollo</option>
+                            <option value="Rottweiler">Rottweiler</option>
+                            <option value="Bull Terrier">Bull Terrier</option>
+                            <option value="Chihuahua">Chihuahua</option>
                             
                            
                             </select>
@@ -89,8 +89,8 @@ const FormPet = () => {
                             
                             <select className="form-control" type="text" id="sex" name="sex" ref={sexRef} onChange={changeState} required>
                             <option selected>seleccione una opción:</option>
-                            <option value="Sexo: Macho">Macho</option>
-                            <option value="Sexo: Hembra">Hembra</option>
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra">Hembra</option>
                             
                            
                             </select>

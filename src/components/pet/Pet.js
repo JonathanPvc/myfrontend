@@ -15,7 +15,7 @@ const Pet = () => {
 
 
     const getPet = () => {
-        axios.get(url + "pet").then(res => {
+        axios.get(url + "pet/pet").then(res => {
             setPet(res.data.pet);
         });
     }
@@ -23,7 +23,7 @@ const Pet = () => {
 
     const deletePet = (id) => {
         const idPet = pet[id]._id;
-        axios.delete(url + "delete/" + idPet).then(res => {
+        axios.delete(url + "pet/delete/" + idPet).then(res => {
             getPet();
         });
     }

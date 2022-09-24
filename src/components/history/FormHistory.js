@@ -49,13 +49,13 @@ const FormHistory = () => {
 
     }
 
-    const sendData3 = (e) => {
+    const sendData = (e) => {
 
         e.preventDefault();
 
         changeState();
 
-        axios.post(url + 'save', history).then(res => {
+        axios.post(url + 'history/save', history).then(res => {
             setRedirect(true);
             console.log(res.data);
         });
@@ -63,7 +63,7 @@ const FormHistory = () => {
     }
 
     if(redirect){
-        return <Navigate to="/user" />;
+        return <Navigate to="/history" />;
     }
 
     return (
@@ -75,7 +75,7 @@ const FormHistory = () => {
                 </div>
 
                 <div className="card-body">
-                    <form onSubmit={sendData3}>
+                    <form onSubmit={sendData}>
 
                         <div className="mb-3">
                             <label>Temperatura</label>
